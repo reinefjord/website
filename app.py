@@ -141,8 +141,15 @@ def index():
 @app.route('/photo/', defaults={'page': 1})
 @app.route('/photo/page/<int:page>')
 def photography(page):
-    photos = Photo.select().order_by(Photo.timestamp.desc()).paginate(page, 9)
-    return flask.render_template('photography.html', photos=photos)
+    query = Photo.select().order_by(Photo.timestamp.desc())
+
+    photos = query.paginate(page, 9) or flask.abort(404)
+    has_next = bool(query.paginate(page+1, 9))
+
+    return flask.render_template('photography.html',
+                                 photos=photos,
+                                 page=page,
+                                 has_next=has_next)
 
 
 @app.route('/photo/<int:photo_id>')

@@ -16,5 +16,14 @@
     </a>
     {% endfor %}
   </div>
+
+  <nav>
+    {% if page > 1 %}
+    <a href="{{ url_for('photography', page=page-1) }}" class="nav-item next">&larr; Newer</a>
+    {% endif %}
+    {% if has_next %}
+    <a href="{{ url_for('photography', page=page+1) }}" class="nav-item prev">Older &rarr;</a>
+    {% endif %}
+  </nav>
 </main>
 {% endblock %}

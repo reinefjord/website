@@ -95,6 +95,15 @@ nav ul {
 
 .view-image nav {
     align-self: center;
+}
+
+.photo-grid + nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.view-image nav,
+.photo-grid + nav {
     margin-top: 2rem;
     max-width: 24rem;
     width: 100%;
