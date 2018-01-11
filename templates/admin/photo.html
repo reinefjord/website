@@ -1,0 +1,34 @@
+{% extends 'admin/admin.html' %}
+
+{% set title = photo.title or 'Unnamed photo' %}
+
+{% set active_page = 'photos' %}
+
+{% block body %}
+<main class="view-image">
+  <img src="{{ photo_resize_url(photo, 800) }}">
+
+  <h2>{{ photo.title or 'Unnamed photo' }}</h2>
+  {{ photo.description or 'No description'}}
+
+  <form method="POST" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    <div class="field">
+      {{ form.photo.label }}
+      {{ form.photo }}
+    </div>
+    <div class="field">
+      {{ form.title.label }}
+      {{ form.title }}
+    </div>
+    <div class="field">
+      {{ form.description.label }}
+      {{ form.description }}
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  <div class="field">
+    <a href="{{ url_for('admin_remove_photo', photo_id=photo.id) }}">Remove</a>
+  </div>
+</main>
+{% endblock %}

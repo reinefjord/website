@@ -1,0 +1,11 @@
+__pycache__/
+venv/
+
+*.db
+*.sqlite
+
+instance/*
+
+static/uploads/*
+static/gen/*
+static/.webassets-cache*

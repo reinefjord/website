@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% set active_page = 'me' %}
+{% set title = 'Find me' %}
+
+{% block body %}
+<main>
+  <h2>Find me</h2>
+  <dl>
+    <dt>GitHub:</dt>
+    <dd><a href="https://github.com/reinefjord">reinefjord</a></dd>
+    <dt>Instagram:</dt>
+    <dd><a href="https://www.instagram.com/rupusreinefjord/">@rupusreinefjord</a></dd>
+    <dt>Flickr:</dt>
+    <dd><a href="https://www.flickr.com/photos/koltrast_">koltrast_</a></dd>
+    <dt>Keybase:</dt>
+    <dd><a href="https://keybase.io/rupus">rupus</a></dd>
+  </dl>
+  <h2>Contact me</h2>
+  <dl>
+    <dt>Email:</dt>
+    <dd>
+      <a href="mailto:firstname(at)lastname(dot)net" class="email">cnVwdXNAa2x0cnN0LnNl</a>
+      <noscript><p>Please activate javascript to see the address. Hint: it is <span class="email">firstname(at)lastname(dot)net</span></p></noscript>
+    </dd>
+    <dt>PGP:</dt>
+    <dd><a href="{{ url_for('static', filename='rupusreinefjord_pubkey.asc') }}"><code>E275 C3F0 8765 EBC3 C906 66F4 E918 999B E668 8BD2</code></a></dd>
+  </dl>
+  <script src="{{ url_for('static', filename='js/emaildecode.js') }}"></script>
+</main>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+    <title>{{ title }} | reinefjord</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+      <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    -->
+
+    {% assets 'common_css' %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+    {% endassets %}
+    {% endblock %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        {% block header %}{% endblock %}
+      </header>
+
+      <nav>
+        <ul>
+          {% for href, id, caption in navbar %}
+          <li><a href="{{ href|e }}" class="nav-item {% if id == active_page %}active{% endif %}">{{ caption|e }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      <ul class="flashes">
+        {% for category, message in messages %}
+        <li class="flash {{ category }}">{{ message|safe }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+
+      {% block body %}{% endblock %}
+    </div>
+  </body>
+</html>

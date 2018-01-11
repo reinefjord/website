@@ -1,0 +1,26 @@
+{% extends 'admin/admin.html' %}
+
+{% set title = 'Remove ' + (photo.title or 'unnamed photo') %}
+
+{% set active_page = 'photos' %}
+
+{% block body %}
+<main class="view-image">
+  <img src="{{ photo_resize_url(photo, 800) }}">
+
+  <h2>{{ photo.title or 'Unnamed photo' }}</h2>
+  {{ photo.description or 'No description'}}
+
+  <form method="POST" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    <h2>Remove photo?</h2>
+    <p>Are you sure?</p>
+    <div class="field">
+      <button type="submit">Remove</button>
+    </div>
+    <div class="field">
+      <a href="{{ url_for('admin_edit_photo', photo_id=photo.id) }}">No, take me away from here</a>
+    </div>
+  </form>
+</main>
+{% endblock %}

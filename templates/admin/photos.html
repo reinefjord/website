@@ -1,0 +1,18 @@
+{% extends 'admin/admin.html' %}
+
+{% set title = 'Photos' %}
+
+{% set active_page = 'photos' %}
+
+{% block body %}
+<main>
+  <h2>Photos</h2>
+  {% if photos %}
+  <ul>
+    {% for photo in photos %}
+    <li><a href="{{ url_for('admin_edit_photo', photo_id=photo.id) }}">{{ photo.timestamp.strftime("%Y-%m-%d %H:%M:%S") }} - {{ photo.title or photo.filename }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</main>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'admin/admin.html' %}
+
+{% set title = 'New photo' %}
+
+{% set active_page = 'new_photo' %}
+
+{% block body %}
+<main>
+  <form method="POST" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    <div class="field">
+      {{ form.photo.label }}
+      {{ form.photo }}
+    </div>
+    <div class="field">
+      {{ form.title.label }}
+      {{ form.title }}
+    </div>
+    <div class="field">
+      {{ form.description.label }}
+      {{ form.description }}
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+{% endblock %}

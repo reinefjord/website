@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* legacy */
+    word-break: break-word; /* for WebKit/Chrome */
+}
+
+.wrapper > * {
+    /* Fixes overflowing content (anything other than "overflow: visible")
+     * in grid. Won't overflow without this. */
+    min-width: 0;
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: "Crimson Text", serif;
+    text-decoration-skip: ink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: minmax(0, 40rem);
+    padding: 1rem 1rem 5rem 1rem;
+}
+
+code, .email {
+    font-family: "Fira Mono", monospace;
+    font-size: 15px
+}
+
+header h1 {
+    margin: 0;
+}
+
+header a {
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sitenav {
+    padding-left: 1rem;
+}
+
+.nav-item {
+    color: #000;
+}
+
+.nav-item:hover {
+    color: #666;
+}
+
+.active {
+    color: #666;
+    text-decoration: none;
+}
+
+.photo-grid {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, 200px);
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.photo-grid img {
+    max-height: 220px;
+}
+
+.view-image {
+    display: flex;
+    flex-direction: column;
+}
+
+.view-image img {
+    max-height: 700px;
+    align-self: center;
+}
+
+.view-image nav {
+    align-self: center;
+    margin-top: 2rem;
+    max-width: 24rem;
+    width: 100%;
+    display: flex;
+}
+
+.view-image form {
+    margin-top: 2rem;
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+}
+
+.prev {
+    margin-left: auto;
+}
+
+.field {
+    margin: 1rem 0;
+    display: block;
+}
+
+.field > label:first-child {
+    display: block;
+}
+
+textarea {
+    width: 30rem;
+    height: 15rem;
+    max-width: 100%;
+}
+
+.flashes {
+    justify-self: center;
+    text-align: center;
+    list-style: none;
+    margin: .5rem 1rem;
+    padding: 0;
+}
+.flash {
+    min-width: 15em;
+    padding: .5rem 1rem;
+    margin: .5rem auto;
+    border-radius: 7px;
+}
+.success {
+    background-color: #c9f7dd;
+    border: 1px solid #62d895;
+    color: #004d21;
+}
+.info {
+    background-color: #cbdef5;
+    border: 1px solid #6797d0;
+    color: #042246;
+}
+.error {
+    background-color: #ffd9d0;
+    border: 1px solid #ff9073;
+    color: #6c1600;
+}
+
+@media screen and (min-width: 60rem) {
+    .wrapper {
+        grid-template-columns: 14rem 40rem;
+    }
+
+    header {
+        grid-column: 1 / -1;
+    }
+
+    nav {
+        grid-column: 1;
+    }
+
+    main {
+        grid-column: 2;
+    }
+
+    .photo-grid {
+        justify-content: left;
+    }
+}

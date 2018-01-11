@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% set navbar = [
+(url_for('index'), 'index', 'Home'),
+(url_for('photography'), 'photo', 'Photography'),
+(url_for('me'), 'me', 'Find me')
+] %}
+
+{% block header %}
+<h1><a href="{{ url_for('index') }}" class="nav-item">rupus reinefjord</a></h1>
+{% endblock %}

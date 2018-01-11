@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% set navbar = [
+(url_for('admin_new_photo'), 'new_photo', 'Upload new photo'),
+(url_for('admin_photos'), 'photos', 'View photos'),
+(url_for('logout'), 'logout', 'Logout')
+] %}
+
+
+{% block header %}
+<h1><a href="{{ url_for('admin') }}" class="nav-item">administration</a></h1>
+{% endblock %}

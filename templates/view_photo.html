@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% set active_page = 'photo' %}
+{% set title = 'Photography' %}
+
+{% block body %}
+<main class="view-image">
+  <img srcset="{{ photo_resize_url(photo, 800) }},
+               {{ photo_resize_url(photo, 1200) }} 1.5x,
+               {{ photo_resize_url(photo, 1600) }} 2x"
+       src="{{ photo_resize_url(photo, 800) }}">
+
+  <article>
+    {% if photo.title %}
+    <h2>{{ photo.title }}</h2>
+    {% endif %}
+    {% if photo.description %}
+    {{ photo.html_description|safe }}
+    {% endif %}
+    {% if next or prev %}
+  </article>
+
+  <nav>
+    {% if next %}
+    <a href="{{ url_for('view_photo', photo_id=next.id) }}" class="nav-item next">&larr; Next</a>
+    {% endif %}
+    {% if prev %}
+    <a href="{{ url_for('view_photo', photo_id=prev.id) }}" class="nav-item prev">Previous &rarr;</a>
+    {% endif %}
+    {% endif %}
+</main>
+{% endblock %}
