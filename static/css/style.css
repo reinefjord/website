@@ -168,7 +168,7 @@ textarea {
 
 @media screen and (min-width: 60rem) {
     .wrapper {
-        grid-template-columns: 14rem 40rem;
+        grid-template-columns: 14rem minmax(40rem, 50rem);
     }
 
     header {
