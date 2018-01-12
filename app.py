@@ -46,14 +46,16 @@ def photo_resize_url(photo, size):
     if app.debug:
         return photo_set.url(photo.filename)
 
-    return f"{photo_set.config.base_url}img{size}/{photo.filename}"
+    return "{}img{}/{}".format(photo_set.config.base_url,
+                               size,
+                               photo.filename)
 
 
 def image_resize_url(image, size):
     if app.debug:
-        return f'static/images/{image}'
+        return 'static/images/{}'.format(image)
 
-    return f"/static/images/img{size}/{image}"
+    return "/static/images/img{}/{}".format(size, image)
 
 
 app.jinja_env.globals['photo_resize_url'] = photo_resize_url
