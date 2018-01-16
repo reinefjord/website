@@ -130,9 +130,13 @@ def is_safe_url(target):
 
 
 @app.errorhandler(404)
-@app.errorhandler(500)
 def not_found(e):
     return flask.render_template('error/{}.html'.format(e.code)), e.code
+
+
+@app.errorhandler(500)
+def server_error(exc):
+    return flask.render_template('error/500.html'), 500
 
 
 @app.route('/')
