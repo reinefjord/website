@@ -71,6 +71,10 @@ nav ul {
     text-decoration: none;
 }
 
+.text {
+    max-width: 40rem;
+}
+
 .photo-grid {
     display: grid;
     grid-gap: 1rem;
