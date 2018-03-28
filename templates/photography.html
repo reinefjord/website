@@ -9,10 +9,10 @@
   <div class="photo-grid">
     {% for photo in photos %}
     <a href="{{ url_for('view_photo', photo_id=photo.id) }}">
-      <img srcset="{{ photo_resize_url(photo, 200) }},
-                   {{ photo_resize_url(photo, 300) }} 1.5x,
-                   {{ photo_resize_url(photo, 400) }} 2x"
-           src="{{ photo_resize_url(photo, 200) }}">
+      <img srcset="{{ photo_resize_url(photo, 300) }},
+                   {{ photo_resize_url(photo, 400) }} 1.5x,
+                   {{ photo_resize_url(photo, 800) }} 2x"
+           src="{{ photo_resize_url(photo, 300) }}">
     </a>
     {% endfor %}
   </div>
