@@ -82,11 +82,16 @@ nav ul {
     justify-content: center;
     align-items: center;
     justify-items: center;
+    background-color: #3a3a3a;
+    padding: 2rem;
 }
 
 .photo-grid img {
-    max-height: 200px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
     border-radius: 5px;
+    object-fit: cover;
 }
 
 .view-image {
