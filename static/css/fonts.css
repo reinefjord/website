@@ -1,49 +1,49 @@
 @font-face {
-    font-family: "Crimson Text";
-    src: url('/static/fonts/crimsontext/Crimson-Roman.woff2') format('woff2'),
-         url('/static/fonts/crimsontext/Crimson-Roman.woff') format('woff');
+    font-family: "Libertine";
+    src: url('/static/fonts/libertine/LinLibertine_R.woff2') format('woff2'),
+         url('/static/fonts/libertine/LinLibertine_R.woff') format('woff');
     font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Crimson Text";
-    src: url('/static/fonts/crimsontext/Crimson-Italic.woff2') format('woff2'),
-         url('/static/fonts/crimsontext/Crimson-Italic.woff') format('woff');
+    font-family: "Libertine";
+    src: url('/static/fonts/libertine/LinLibertine_RI.woff2') format('woff2'),
+         url('/static/fonts/libertine/LinLibertine_RI.woff') format('woff');
     font-weight: 400;
     font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Crimson Text";
-    src: url('/static/fonts/crimsontext/Crimson-SemiBold.woff2') format('woff2'),
-         url('/static/fonts/crimsontext/Crimson-SemiBold.woff') format('woff');
+    font-family: "Libertine";
+    src: url('/static/fonts/libertine/LinLibertine_RZ.woff2') format('woff2'),
+         url('/static/fonts/libertine/LinLibertine_RZ.woff') format('woff');
     font-weight: 600;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Crimson Text";
-    src: url('/static/fonts/crimsontext/Crimson-SemiBoldItalic.woff2') format('woff2'),
-         url('/static/fonts/crimsontext/Crimson-SemiBoldItalic.woff') format('woff');
+    font-family: "Libertine";
+    src: url('/static/fonts/libertine/LinLibertine_RZI.woff2') format('woff2'),
+         url('/static/fonts/libertine/LinLibertine_RZI.woff') format('woff');
     font-weight: 600;
     font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Crimson Text";
-    src: url('/static/fonts/crimsontext/Crimson-Bold.woff2') format('woff2'),
-         url('/static/fonts/crimsontext/Crimson-Bold.woff') format('woff');
+    font-family: "Libertine";
+    src: url('/static/fonts/libertine/LinLibertine_RB.woff2') format('woff2'),
+         url('/static/fonts/libertine/LinLibertine_RB.woff') format('woff');
     font-weight: 700;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Crimson Text";
-    src: url('/static/fonts/crimsontext/Crimson-BoldItalic.woff2') format('woff2'),
-         url('/static/fonts/crimsontext/Crimson-BoldItalic.woff') format('woff');
+    font-family: "Libertine";
+    src: url('/static/fonts/libertine/LinLibertine_RBI.woff2') format('woff2'),
+         url('/static/fonts/libertine/LinLibertine_RBI.woff') format('woff');
     font-weight: 700;
     font-style: italic;
     font-display: swap;
